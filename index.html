@@ -3,44 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guilherme ❤️ Vitória</title>
+<title>Nosso Amor ❤️</title>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  text-align: center;
 }
 
 .card {
-  background: rgba(255,255,255,0.15);
-  padding: 30px;
-  border-radius: 20px;
-  width: 90%;
   max-width: 420px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  backdrop-filter: blur(10px);
-}
-
-h1 {
-  margin-bottom: 10px;
-  font-size: 28px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.tempo {
-  margin: 15px 0;
-  font-weight: bold;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.15);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 img {
@@ -65,45 +45,44 @@ button {
 <body>
 
 <div class="card">
-  <h1>Guilherme ❤️ Vitória</h1>
 
-  <div class="tempo" id="tempo"></div>
+  <h1>❤️ Nosso Amor ❤️</h1>
+
+  <p id="tempo"></p>
 
   <p>
-    Desde o dia que você entrou na minha vida, tudo ficou melhor.
-    Eu te amo ❤️
+    Você é tudo pra mim. Te amo ❤️
   </p>
 
+  <!-- FOTO (TEM QUE ESTAR NO MESMO REPO) -->
   <img src="foto.jpg" alt="foto do casal">
 
-  <button onclick="tocar()">Tocar música 🎵</button>
+  <!-- BOTÃO DE MÚSICA (OBRIGATÓRIO clicar) -->
+  <button onclick="document.getElementById('musica').play()">
+    Tocar música 🎵
+  </button>
 
-  <audio id="musica">
+  <audio id="musica" loop>
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
+
 </div>
 
 <script>
-// contador
-const inicio = new Date("2026-03-08");
+// contador simples
+const inicio = new Date("2024-01-01");
 
 function atualizar() {
   const agora = new Date();
   const diff = agora - inicio;
-
   const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
 
   document.getElementById("tempo").innerHTML =
-    dias + " dias juntos ❤️";
+    "Estamos juntos há " + dias + " dias ❤️";
 }
 
 setInterval(atualizar, 1000);
 atualizar();
-
-// música
-function tocar() {
-  document.getElementById("musica").play();
-}
 </script>
 
 </body>
