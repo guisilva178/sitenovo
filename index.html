@@ -1,89 +1,312 @@
 <!DOCTYPE html>
+<html id="romantic999">
+<head>
+...
+</head>
+<body>
+...
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosso Amor ❤️</title>
+<title>Guilherme ❤️ Vitória</title>
 
 <style>
 body {
-  margin: 0;
+margin: 0;
+  font-family: Arial;
+  background: linear-gradient(#ff4d6d, #ff8fa3);
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
-  color: white;
+color: white;
+text-align: center;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+/* TELA SENHA */
+#senhaTela {
+/* CORAÇÕES CAINDO */
+.heart {
+position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #ff4d6d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
   text-align: center;
 }
 
-.card {
-  max-width: 420px;
-  margin: 60px auto;
-  background: rgba(255,255,255,0.15);
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-img {
-  width: 100%;
-  border-radius: 15px;
-  margin-top: 15px;
-}
-
 button {
-  margin-top: 15px;
-  padding: 10px 15px;
+  margin-top: 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 10px;
   background: white;
   color: #ff4d6d;
+  cursor: pointer;
+  top: -10px;
+  color: #fff;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+/* CONTEÚDO */
+#conteudo {
+  display: none;
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+h1 {
+margin-top: 30px;
+  font-size: 40px;
+}
+
+.contador {
+  font-size: 22px;
+  margin: 20px;
+  font-size: 38px;
+}
+
+.galeria img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+/* CARTA */
+.carta {
+  width: 300px;
+  height: 200px;
+  margin: 40px auto;
+  perspective: 1000px;
+}
+
+.carta-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.carta.aberta .carta-inner {
+  transform: rotateY(180deg);
+.container {
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  margin: 20px auto;
+  width: 85%;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.frente, .verso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+img {
+  width: 220px;
+border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.frente {
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+background: white;
+color: #ff4d6d;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 10px;
+}
+
+.verso {
+  background: rgba(255,255,255,0.2);
+  transform: rotateY(180deg);
+  padding: 15px;
+  font-size: 16px;
+}
+
+/* CORAÇÕES */
+.coracao {
+  position: fixed;
+  top: -10px;
+  animation: cair 5s linear infinite;
+}
+
+@keyframes cair {
+  to { transform: translateY(110vh); }
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div id="senhaTela">
+  <h2>🔐 Digite nossa data</h2>
+  <input type="password" id="senha" placeholder="DDMMAAAA">
+  <button onclick="verificar()">Entrar</button>
+</div>
+<h1>Guilherme ❤️ Vitória</h1>
 
-  <h1>❤️ Nosso Amor ❤️</h1>
+<div id="conteudo">
+<p id="tempo"></p>
 
-  <p id="tempo"></p>
-
+<h1 id="nome"></h1>
+<div class="container">
   <p>
-    Você é tudo pra mim. Te amo ❤️
+    Amor, desde o dia que te conheci minha vida mudou completamente.
+    Eu te amo muito ❤️
   </p>
 
-  <!-- FOTO (TEM QUE ESTAR NO MESMO REPO) -->
-  <img src="foto.jpg" alt="foto do casal">
+<div class="contador" id="contador"></div>
+  <!-- SUA FOTO -->
+  <img src="foto.jpg" alt="nós">
 
-  <!-- BOTÃO DE MÚSICA (OBRIGATÓRIO clicar) -->
-  <button onclick="document.getElementById('musica').play()">
-    Tocar música 🎵
-  </button>
-
-  <audio id="musica" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
-
+<div class="galeria">
+  <img src="foto1.jpg">
+  <img src="foto2.jpg">
+  <img src="foto3.jpg">
 </div>
 
+<div class="carta" onclick="abrirCarta(this)">
+  <div class="carta-inner">
+    <div class="frente">💌 Clique para abrir</div>
+    <div class="verso">
+      Amor, desde os primeiros momentos que te vi,
+      você mudou minha vida completamente.
+
+      Eu só quero você…
+      eu te amo, minha princesa ❤️
+
+      E quero viver aumentando esse contador com você.
+    </div>
+  </div>
+</div>
+
+<!-- MÚSICA -->
+<audio id="musica" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+<br>
+<button onclick="tocarMusica()">▶ Tocar música</button>
+
 <script>
-// contador simples
-const inicio = new Date("2024-01-01");
+const senhaCorreta = "08032026";
 
-function atualizar() {
-  const agora = new Date();
-  const diff = agora - inicio;
-  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+function verificar() {
+  const senha = document.getElementById("senha").value;
+  if (senha === senhaCorreta) {
+    document.getElementById("senhaTela").style.display = "none";
+    document.getElementById("conteudo").style.display = "block";
+    document.getElementById("musica").play();
+    escreverNome();
+  } else {
+    alert("Senha errada 😢");
+  }
+}
+// CORAÇÕES CAINDO
+function criarCoracao() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
 
-  document.getElementById("tempo").innerHTML =
-    "Estamos juntos há " + dias + " dias ❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+  document.body.appendChild(heart);
+
+/* NOME DIGITANDO */
+const texto = "Guilherme ❤️ Vitória";
+let i = 0;
+
+function escreverNome() {
+  const el = document.getElementById("nome");
+  const intervalo = setInterval(() => {
+    el.innerHTML += texto.charAt(i);
+    i++;
+    if (i >= texto.length) clearInterval(intervalo);
+  }, 100);
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
 }
 
-setInterval(atualizar, 1000);
-atualizar();
+/* CONTADOR */
+const dataNamoro = new Date("2026-03-08");
+setInterval(criarCoracao, 300);
+
+// CONTADOR
+const inicio = new Date("2026-03-08"); // troca aqui
+
+function atualizarContador() {
+function atualizarTempo() {
+const agora = new Date();
+  const diff = agora - dataNamoro;
+  const diff = agora - inicio;
+
+const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diff / (1000 * 60)) % 60);
+  const horas = Math.floor(diff / (1000 * 60 * 60));
+
+  document.getElementById("contador").innerHTML =
+    `${dias} dias, ${horas} horas e ${minutos} minutos juntos 💘`;
+  document.getElementById("tempo").innerHTML =
+    dias + " dias e " + horas + " horas juntos ❤️";
+}
+
+setInterval(atualizarContador, 1000);
+setInterval(atualizarTempo, 1000);
+atualizarTempo();
+
+/* CARTA */
+function abrirCarta(el) {
+  el.classList.toggle("aberta");
+// MÚSICA
+function tocarMusica() {
+  document.getElementById("musica").play();
+}
+
+/* CORAÇÕES */
+function criarCoracao() {
+  const c = document.createElement("div");
+  c.classList.add("coracao");
+  c.innerHTML = "❤️";
+  c.style.left = Math.random() * 100 + "vw";
+  c.style.fontSize = (10 + Math.random() * 20) + "px";
+  document.body.appendChild(c);
+  setTimeout(() => c.remove(), 5000);
+}
+
+setInterval(criarCoracao, 300);
 </script>
 
 </body>
 </html>
+```
