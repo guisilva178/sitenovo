@@ -8,7 +8,7 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
   color: white;
   text-align: center;
@@ -31,6 +31,7 @@ input {
   border-radius: 10px;
   border: none;
   text-align: center;
+  outline: none;
 }
 
 button {
@@ -48,6 +49,12 @@ button {
 #site {
   display: none;
   padding: 20px;
+}
+
+p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
 }
 
 .galeria {
@@ -84,7 +91,34 @@ button {
 
   <p>Eu te amo ❤️</p>
 
-  <!-- GALERIA 6 FOTOS -->
+  <!-- TEXTO ROMÂNTICO -->
+  <p>
+  Desde o dia em que você entrou na minha vida, tudo ganhou mais cor, mais sentido e mais paz. É como se, antes de você, tudo fosse apenas um rascunho, e agora eu finalmente estivesse vivendo a versão mais bonita da minha história.
+  </p>
+
+  <p>
+  Cada momento ao seu lado, mesmo os mais simples, se tornam especiais. O seu sorriso tem o poder de acalmar tudo dentro de mim, e o seu jeito de ser me faz acreditar que o amor verdadeiro existe de verdade.
+  </p>
+
+  <p>
+  Eu gosto de pensar em nós dois como algo raro, que o tempo não desgasta, só fortalece. Você é meu lugar favorito no mundo.
+  </p>
+
+  <p>
+  Se alguém me perguntasse o que é felicidade, eu diria sem pensar: felicidade é você.
+  </p>
+
+  <p>
+  E não importa o futuro, se for com você, eu não tenho medo de nada.
+  </p>
+
+  <p>
+  Em todas as vidas possíveis, eu escolheria você.
+  </p>
+
+  <p>Com todo o meu amor ❤️</p>
+
+  <!-- GALERIA -->
   <h2>📸 Nossas fotos</h2>
 
   <div class="galeria">
@@ -123,7 +157,7 @@ function entrar() {
   }
 }
 
-// contador
+// contador de dias
 const inicio = new Date("2026-03-08");
 
 function atualizar() {
@@ -136,7 +170,7 @@ function atualizar() {
     dias + " dias juntos ❤️";
 }
 
-setInterval(atualizar, 1000);
+setInterval(atualizar, 1000 * 60); // atualiza a cada minuto
 atualizar();
 
 </script>
