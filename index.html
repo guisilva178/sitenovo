@@ -12,7 +12,6 @@ body {
   background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
   color: white;
   text-align: center;
-  overflow-x: hidden;
 }
 
 /* LOGIN */
@@ -31,6 +30,7 @@ input {
   padding: 10px;
   border-radius: 10px;
   border: none;
+  text-align: center;
 }
 
 button {
@@ -40,18 +40,28 @@ button {
   border-radius: 10px;
   background: white;
   color: #ff4d6d;
+  font-weight: bold;
   cursor: pointer;
 }
 
-/* CONTEÚDO */
+/* SITE */
 #site {
   display: none;
+  padding: 20px;
 }
 
-img {
-  width: 250px;
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.galeria img {
+  width: 100%;
   border-radius: 15px;
-  margin-top: 10px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -60,7 +70,7 @@ img {
 
 <!-- LOGIN -->
 <div id="login">
-  <h2>Digite a senha ❤️</h2>
+  <h2>🔐 Digite a senha</h2>
   <input type="password" id="senha" placeholder="DDMMAAAA">
   <button onclick="entrar()">Entrar</button>
 </div>
@@ -74,12 +84,22 @@ img {
 
   <p>Eu te amo ❤️</p>
 
-  <img src="foto.jpg">
+  <!-- GALERIA 6 FOTOS -->
+  <h2>📸 Nossas fotos</h2>
+
+  <div class="galeria">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+    <img src="foto4.jpg">
+    <img src="foto5.jpg">
+    <img src="foto6.jpg">
+  </div>
 
   <br>
 
   <button onclick="document.getElementById('musica').play()">
-    Tocar música 🎵
+    ▶ Tocar música 🎵
   </button>
 
   <audio id="musica" loop>
